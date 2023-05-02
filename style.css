@@ -1,0 +1,335 @@
+/* Login Page */
+body{
+    margin: 0px;
+}
+
+div#login h1 {
+    background: linear-gradient(to right, orange, aqua); background-attachment: fixed;
+    border-top: 1px solid; border-bottom: 1px solid;
+    font-family: sans-serif;
+    padding: 9px;
+}
+
+div#login #p1 {
+    font-family: sans-serif; letter-spacing: .04em;
+    margin-top: 50px; margin-left: 50px;
+    
+}
+
+div#login #p2 {
+    font-family: sans-serif; letter-spacing: .06em;
+    margin-left: 50px;
+}
+
+div#login input {
+    margin:3px; padding:5px; color:#5b5b5b; width:150px; border:1px solid #9a9a9a;
+}
+
+div#login input[type=submit] {
+    margin-top: 20px; width:70px;
+}
+
+div#login input[type=submit]:hover {
+    background-color:lightgrey;
+}
+
+/* Logout */
+div#logout p {
+    font-family: sans-serif; letter-spacing: .06em;
+    margin-top: 50px; margin-left: 50px;
+}
+
+div#logout button {
+    margin:3px; padding:5px; color:#5b5b5b; width:150px; border:1px solid #9a9a9a;
+    margin-left: 50px;
+}
+
+div#logout button:hover{
+    background-color:lightgrey;
+}
+
+/* Incorrect Login */
+div#incorrect_login p{
+    font-family: sans-serif; letter-spacing: .06em;
+    margin-top: 50px; margin-left: 50px;
+}
+
+div#incorrect_login button {
+    margin:3px; padding:5px; color:#5b5b5b; width:150px; border:1px solid #9a9a9a;
+}
+
+div#incorrect_login button[type=submit] {
+    margin-top: 20px; margin-left: 50px; width: 120px;
+}
+
+div#incorrect_login button[type=submit]:hover {
+    background-color:lightgrey;
+}
+
+/* Successful Login */
+div#successful_login h2 {
+    background: linear-gradient(to right, orange, aqua); background-attachment: fixed;
+    border-top: 1px solid; border-bottom: 1px solid;
+    font-family: sans-serif;
+    padding: 9px;
+}
+
+div#successful_login button {
+    padding:5px; background-color:transparent; width:70px; border:1px solid white;
+    top: 9px; right: 20px;
+    position: absolute;
+    font-weight: bold;
+}
+
+div#successful_login button[type=submit] {
+    margin-left: 50px; width: 120px;
+}
+
+div#successful_login button:hover {
+    background-color:lightgrey;
+}
+
+/* Admin Header */
+div#admin_header {
+    position: relative; top: -89px; left: 37%; right: 63%; width: 500;
+}
+
+div#admin_header p, input{
+    display: inline-block;
+}
+
+div#admin_header p {
+    font-family: sans-serif; letter-spacing: .04em; font-weight: bold;
+}
+
+div#admin_header input {
+    padding:5px; background-color:transparent; width:70px; border:1px solid white;
+    font-weight: bold;
+}
+
+div#admin_header input[name=associate] {
+    margin-left: 30px; width: 100px;
+}
+
+div#admin_header input[name=quote] {
+    margin-left: 30px; width: 100px;
+}
+
+div#admin_header input:hover{
+    background-color:lightgrey;
+}
+
+/* Admin Edit Associate */
+div#admin_edit_associate {
+    font-family: sans-serif;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+/* Admin Associates Table */
+div#admin_associates_table {
+    font-family: sans-serif;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+div#admin_associates_table h4 {
+    letter-spacing: .04em; font-weight: bold;
+}
+
+div#admin_associates_table td {
+    padding: 4px;
+}
+
+div#admin_associates_table button {
+    padding:5px; color:#5b5b5b; width:50px; border:1px solid #9a9a9a;
+}
+
+div#admin_associates_table button:hover {
+    background-color:lightgrey;
+}
+
+/* Admin Create Associate */
+div#admin_create_associate {
+    font-family: sans-serif;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+div#admin_create_associate p {
+    font-weight: bold;
+}
+
+div#admin_create_associate label {
+    display: inline-block;
+    clear: left;
+    width: 100px;
+    text-align: left;
+}
+
+div#admin_create_associate input {
+  display: inline-block;
+}
+
+div#admin_create_associate input[type=submit] {
+    padding:5px; color:#5b5b5b; width:150px; border:1px solid #9a9a9a;
+}
+
+div#admin_create_associate input[type=submit] {
+    margin-top: 10px; width: 120px;
+}
+
+div#admin_create_associate input[type=submit]:hover {
+    background-color:lightgrey;
+}
+
+/* Admin Quote Filter */
+div#admin_quote_filter {
+    font-family: sans-serif;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+div#admin_quote_filter h4 {
+    font-weight: bold;
+}
+
+div#admin_quote_filter label[for=status_choice],
+div#admin_quote_filter label[for=associate_choice],
+div#admin_quote_filter label[for=customer_choice] {
+    display:inline-block;
+    clear: left;
+    width: 100px;
+    text-align: left;
+}
+
+div#admin_quote_filter select[name=status_choice],
+div#admin_quote_filter select[name=associate_choice],
+div#admin_quote_filter select[name=customer_choice] {
+    display:inline-block;
+    clear: left;
+    width: 250px;
+    text-align: left;
+}
+
+div#admin_quote_filter select[name=date_min_choice],
+div#admin_quote_filter select[name=date_max_choice] {
+    display:inline-block;
+    clear: left;
+    width: 115px;
+    text-align: left;
+}
+
+div#admin_quote_filter label[for=date_min_choice]{
+    display:inline-block;
+    clear: left;
+    width: 100px;
+    text-align: left;
+}
+
+div#admin_quote_filter label[for=date_max_choice] {
+    display:inline-block;
+    clear: left;
+    width: 20px;
+    text-align: center;
+}
+
+div#admin_quote_filter input[type=submit] {
+    color:#5b5b5b; width:150px; border:1px solid #9a9a9a;
+}
+
+div#admin_quote_filter input[type=submit] {
+    margin-top: 10px;
+    width: 75px;
+}
+
+div#admin_quote_filter input[type=submit]:hover {
+    background-color:lightgrey;
+}
+
+/* Admin Quote Table */
+div#admin_quote_table {
+    font-family: sans-serif;
+    margin-left: 2%;
+    z-index: -1;
+}
+
+div#admin_quote_table td {
+    padding: 4px;
+}
+
+div#admin_quote_table h4 {
+    letter-spacing: .04em; font-weight: bold;
+}
+
+div#admin_quote_table button {
+    padding:5px; color:#5b5b5b; width:50px; border:1px solid #9a9a9a;
+}
+
+div#admin_quote_table button:hover {
+    background-color:lightgrey;
+}
+
+/* Associate Select */
+div#associate_select {
+    font-family: sans-serif;
+    margin-left: 2%;
+}
+
+div#associate_select button {
+    color:#5b5b5b; width: 150px; border:1px solid #9a9a9a;
+}
+
+div#associate_select button:hover {
+    background-color:lightgrey;
+}
+
+/* Associate Quote Table */
+div#associate_quote_table {
+    font-family: sans-serif;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+div#associate_quote_table input {
+    color:#5b5b5b; width:100px; border:1px solid #9a9a9a;
+}
+
+div#associate_quote_table input:hover {
+    background-color:lightgrey;
+}
+
+/* HQ Header */
+#hq_header {
+    background: linear-gradient(to right, orange, aqua); background-attachment: fixed;
+    border-top: 1px solid; border-bottom: 1px solid;
+    font-family: sans-serif;
+    padding: 9px;
+}
+
+/* HQ Table */
+div#hq_table {
+    font-family: sans-serif;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+div#hq_table input {
+    padding:5px; color:#5b5b5b; width:100px; border:1px solid #9a9a9a;
+}
+
+div#hq_table input:hover {
+    background-color:lightgrey;
+}
+
+div#hq_table button {
+    padding:5px; background-color:transparent; width:70px; border:1px solid white;
+    top: 14px; right: 20px;
+    position: absolute;
+    font-weight: bold;
+}
+
+div#hq_table button:hover {
+    background-color:lightgrey;
+}

@@ -1,4 +1,5 @@
 <html>
+    <link rel="stylesheet" href="style.css">
 
     <style>
         .modal {
@@ -21,6 +22,7 @@
         padding: 20px;
         border: 1px solid #888;
         width: 80%; /* Could be more or less, depending on screen size */
+        font-family: sans-serif;
         }
 
 
@@ -220,7 +222,7 @@
             $prepared = $db1->prepare($sql);
             $success = $prepared->execute();
 
-            echo "<h3>Quote Created Successfully!</h3>";
+            echo "<h2 style='font-family: sans-serif; font-weight: bold; margin-left: 2%;'>Quote Created Successfully!</h2>";
         }// end of if ("Unfinalized" or "Finalized" )statement 
 
 
@@ -409,7 +411,7 @@
             $prepared = $db1->prepare($sql);
             $success = $prepared->execute();
 
-            echo "<h3>Quote Updated Successfully!</h3>";
+            echo "<h2 style='font-family: sans-serif; font-weight: bold; margin-left: 2%;'>Quote Updated Successfully!</h2>";
 
         }
 
@@ -433,6 +435,7 @@
 
     ?>
 
+    <div id="associate_select">
     <h3>Create a new quote</h3>
 
     Customer Name:
@@ -449,6 +452,7 @@
 
     
     <button id="myBtn">Select Customer</button>
+    </div>
         
     <!-- Opens a modal when select customer button is pressed  -->
     <div id="myModal" class="modal">
@@ -513,6 +517,7 @@
     <?php // list current quotes / allow edits 
 
         //LIST CURRENT QUOTES
+        echo '<div id="associate_quote_table">';
         echo '<br/><br/><h2>List of Current Quotes</h2>';
 
         $user_id = $_SESSION['user_id'];
@@ -560,8 +565,10 @@
             
         }
         echo "</table>";
+        $max_quoteid = isset($max_quoteid) ? $max_quoteid : '';
         echo "<input type=\"hidden\" name=\"max_quoteid\" value=\"".$max_quoteid."\"/>";
         echo "</form>";
+        echo "</div>";
 
     ?>
 

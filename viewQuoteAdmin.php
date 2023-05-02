@@ -13,14 +13,45 @@
 
     $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
-    echo '</br>';
+    echo '<style>
+            input[type=submit] {
+                padding:5px; color:#5b5b5b; width:150px; border:1px solid #9a9a9a;
+                margin-top: 10px; width: 120px;
+            }
+            
+            input[type=submit]:hover {
+                background-color:lightgrey;
+            }
 
+            p {
+                font-family: sans-serif;
+            }
+
+            h4 {
+                font-family: sans-serif;
+            }
+            
+        </style>';
+    
     foreach($rows as $row){
         //SHOW CUSTOMER INFO
+
+        $commission = 0;
+
+        if($row['status'] == 'Ordered'){
+            $sql = 'SELECT commission_percent FROM Processed, Processed_Quote WHERE Processed_Quote.foreign_quote_id = ?';
+            $stmt = $db1->prepare($sql);
+            $stmt->execute(array($_GET['id']));
+
+            $commission_percent = $stmt->fetch();
+
+            $commission = $row['price'] * $commission_percent[0];
+            $commission = round($commission, 2);
+        }
         
         //store some values
         $date = $row['date'];
-        $commission = 'commission placeholder';
+        
         $email = $row['customerEmail'];
 
 
@@ -30,17 +61,18 @@
         $customer_fetch = $stmt->fetchALL(PDO::FETCH_ASSOC);
 
         foreach ($customer_fetch as $row) {
-            echo 'Order From: ' . $row['name'] . '</br></br>';
+            echo '<p>Order From: ' . $row['name'] . '</br></br>';
             echo $row['street'] . '</br>';
             echo $row['city'] . '</br>';
             echo 'Contact: '. $row['contact'] . '</br>';
         }
         echo 'Date Fulfilled: ' . $date . '</br>';
-        echo 'Commission: '. $commission .'</br>';
+        echo 'Commission: $'. number_format($commission, 2, '.', '') .'</br>';
         echo '</br></br>';
 
         //SHOW CUSTOMER EMAIL
-        echo 'Email: ' . $email;
+        echo 'Email: ' . $email . '</p>';
+        echo '<hr style="height:2px;border-width:0;color:gray;background-color:gray">';
     }
 
     
@@ -58,10 +90,11 @@
     echo '<h4>Line Items:</h4>';
 
     foreach($rows as $row){
-        echo $row['item_name'] . ' - $' . $row['price'] . '</br>';
+        echo '<p>' . $row['item_name'] . ' - $' . $row['price'] . '</p>';
     }
 
     echo '</br>';
+    echo '<hr style="height:2px;border-width:0;color:gray;background-color:gray">';
 
     //SHOW SECRET NOTES
     $sql = 'SELECT text_field FROM Note, Quote_Note
@@ -76,10 +109,11 @@
     echo '<h4>Notes:</h4>';
 
     foreach($rows as $row){
-        echo '- ' . $row['text_field'] . '</br>';
+        echo '<p>- ' . $row['text_field'] . '</p>';
     }
 
-    echo '</br></br>';
+    echo '</br>';
+    echo '<hr style="height:2px;border-width:0;color:gray;background-color:gray"></br>';
     //SHOW TOTAL PRICE
     $sql = 'SELECT price FROM Quote WHERE quote_id = ' .$quote_id;
     $stmt = $db1->prepare($sql);
@@ -87,7 +121,7 @@
 
     $rows = $stmt->fetchALL(PDO::FETCH_ASSOC);
     foreach($rows as $row){
-        echo 'Amount: $' . $row['price'] . '</br>';
+        echo '<p>Amount: $' . $row['price'] . '</p>';
     } 
 
     echo '<form action="home.php" method="POST">';

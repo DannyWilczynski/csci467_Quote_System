@@ -7,7 +7,10 @@
    //destroy the session
    session_destroy();
 
-
-   echo '<p>You have been logged out.</p>';
-   echo '<a href="login.php">Log back in</a>';
+   echo "<link rel='stylesheet' href='style.css'>";
+   echo "<div id='logout'>";
+   echo "<p>You have been logged out.</p>";
+   echo "<form action=\"login.php\" method=\"post\">";
+      echo "<button type=\"submit\"> Back to Login</button>";
+   echo "</div>";
 ?>

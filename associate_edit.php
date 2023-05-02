@@ -1,15 +1,68 @@
 <?php
     session_start();
+
+    echo '<style>
+            body {
+                margin: 0px;
+            }
+
+            div#associate_edit_quote_header h2 {
+                background: linear-gradient(to right, orange, aqua); background-attachment: fixed;
+                border-top: 1px solid; border-bottom: 1px solid;
+                font-family: sans-serif;
+                padding: 9px;
+            }
+            
+            div#associate_edit_quote_header button {
+                padding:5px; background-color:transparent; width:70px; border:1px solid white;
+                top: 9px; right: 20px;
+                position: absolute;
+                font-weight: bold;
+            }
+            
+            div#associate_edit_quote_header button[type=submit] {
+                margin-left: 50px; width: 120px;
+            }
+            
+            div#associate_edit_quote_header button:hover {
+                background-color:lightgrey;
+            }
+
+            div#associate_edit {
+                font-family: sans-serif;
+                margin-left: 2%;
+            }
+            
+            div#associate_edit input[type=submit] {
+                padding:5px; color:#5b5b5b; width:150px; border:1px solid #9a9a9a;
+            }
+            
+            div#associate_edit input[type=submit]:hover {
+                background-color:lightgrey;
+            }
+            
+            div#associate_edit input[name=editFinalizeQuote] {
+                margin-left: 20px;
+            }
+
+            div#associate_edit input[name=Discard] {
+                margin-top: 20px;
+            }
+            
+        </style>';
+
+    echo '<div id="associate_edit_quote_header">';
     echo "<h2>logged in as " .$_SESSION["username"]." </h2>";
     echo "<button><a href=\"logout.php\">Logout</a></button><br/> ";
-    echo '<hr style="height:2px;border-width:0;color:gray;background-color:gray">';
+    //echo '<hr style="height:2px;border-width:0;color:gray;background-color:gray">';
+    echo '</div>';
 ?>
 
 
 <html>
-    <h3>Editing an quote</h3>
+    <div id="associate_edit">
+    <h3>Editing a quote</h3>
 
-    
     <?php
         include('config.php');
 
@@ -161,7 +214,7 @@
             <input type="submit" name="Discard" value="Discard Changes">
                     
         </form>
-
+        </div>
 
     <script>
         
