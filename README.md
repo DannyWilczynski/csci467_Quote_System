@@ -1,1 +1,1 @@
-# csci467_Quote_System
+Quote System for csci467 
